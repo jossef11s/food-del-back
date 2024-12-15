@@ -21,7 +21,7 @@ const placeOrder = async (req,res)=>{
         await userModel.findByIdAndUpdate(req.body.userId,{cartData:{}})
         const line_items = req.body.items.map((item)=>({
             price_data:{
-                currency:"inr",
+                currency:"eur",
                 product_data:{
                     name:item.name
                 },
@@ -31,7 +31,7 @@ const placeOrder = async (req,res)=>{
         }))
         line_items.push({
             price_data:{
-                currency:"inr",
+                currency:"eur",
                 product_data:{
                     name:"Delivey Charges"
                 },
